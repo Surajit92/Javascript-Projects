@@ -1,0 +1,114 @@
+/* Universal style , margin , padding , box-sizing , font-family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+
+}
+
+/* Mastermind container style hieght view hieght, width, linear gradient angle with color
+position - relative
+*/
+.mastermind {
+
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(45deg, black, rgb(255, 208, 0));
+    position: relative;
+} 
+/* Container style  height,width,background,position - absolute to centre
+top - 50%, left-50% for center, trnasform x axis and y axis
+-x axis, -y axis
+
+
+*/
+.container {
+    height: 180px;
+    width: 800px;
+    background-color: rgba(199, 96, 28, 0.4);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Pseudo element  height,width,background color, position, top, bottom
+z index - -1 it means behind the container
+Content will not work - Psuedo element without content not work
+border-radius round (50%)
+
+*/
+.container::before {
+    content: "";
+    height: 180px;
+    width: 180px;
+    background-color: yellow;
+    position: absolute;
+    top: -34px;
+    left: -30px;
+    bottom: -30px;
+    z-index: -1;
+    border-radius: 5px;
+}
+
+.container::after{
+    content: "Psuedo";
+    height: 180px;
+    width: 180px;
+    background-color: black;
+    position: absolute;
+    bottom: -60px;
+    right: -90px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.clock {
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ /* Backdrop filter for blurring effect    */
+    backdrop-filter: blur(45px);
+}
+
+.clock span {
+    font-size: 100px;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+/* Decrease the font size of Pseudo element Hrs,Mins,Secs */
+
+span::before{
+
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 20px;
+}
+
+/* Psuedo elements Hrs, Mins,Secs */
+
+#hrs::before{
+    content: "Hours";
+}
+
+#mins::before{
+    content: "Minutes";
+}
+
+#secs::before{
+    content: "Seconds";
+}
