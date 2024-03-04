@@ -1,1 +1,1 @@
-**Simple Calculator project using HTML,CSS and Javascript 
+**Simple Calculator project using HTML,CSS and Javascript**
