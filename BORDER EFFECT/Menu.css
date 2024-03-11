@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vh;
+    background-color: #ffad;
+
+}
+
+ul
+{
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+}
+
+ul li {
+  
+ list-style: none;
+ padding: 10px 15px;
+
+
+}
+
+ul li a {
+   
+    text-decoration: none;
+    color: #1a1818;
+    font-size: 20px;
+    display: block;
+    position: relative;
+
+}
+
+ul li a::before{ /* Psuedo element content , content will not work
+    100% of parent, postion related to parent
+    x initial 0 trans all 2s but during hovering*/
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #1a1818;
+      transform: scaleX(0);
+      transform-origin: left; /*As tranform should be from left to right*/
+      transition: all 1s;
+
+
+}
+
+ul li a::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #1a1818;
+    transform: scaleX(0);
+    transform-origin: right; /*As tranform should be from right to left*/
+    transition: all 1s;
+
+
+}
+/* Psuedo element content ,
+    x initial 0 trans all 2s but during hovering*/
+
+ul li a:hover::before,
+ul li a:hover::after{
+    transform: scaleX(1); /*all the transition hover*/
+}
+
